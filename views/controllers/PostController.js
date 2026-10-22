@@ -5,6 +5,7 @@ class PostController {
   static async index(req, res) {
     try {
       const posts = await db.Post.findAll({
+        include: [{ model: db.Comment, attributes: ['id'] }],
         order: [['createdAt', 'DESC']]
       });
       res.render('posts/index', { posts });
@@ -52,7 +53,9 @@ class PostController {
   // Zobrazí detail jednoho příspěvku
   static async show(req, res) {
     try {
-      const post = await db.Post.findByPk(req.params.id);
+      const post = await db.Post.findByPk(req.params.id, {
+        include: [db.Comment]
+      });
       if (!post) {
         return res.status(404).send('Příspěvek nenalezen');
       }

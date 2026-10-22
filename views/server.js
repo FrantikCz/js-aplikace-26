@@ -5,6 +5,7 @@ require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
 const app = express();
 const { initDb } = require('./db/sequelize');
 const postRoutes = require('./routes/postRoutes');
+const commentRoutes = require('./routes/commentRoutes');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'public'));
@@ -22,6 +23,9 @@ app.get('/about', (req, res) => {
 
 // POST routes
 app.use('/posts', postRoutes);
+
+// COMMENT routes
+app.use('/', commentRoutes);
 
 app.use((req, res) => {
     res.status(404).send('Stránka nebyla nalezena.');

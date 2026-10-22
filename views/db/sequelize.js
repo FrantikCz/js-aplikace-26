@@ -13,6 +13,16 @@ const db = {
 
 // Import models
 db.Post = require('../models/Post')(sequelize, Sequelize);
+db.Comment = require('../models/Comment')(sequelize, Sequelize);
+
+// Define associations
+db.Post.hasMany(db.Comment, {
+  foreignKey: 'postId',
+  onDelete: 'CASCADE'
+});
+db.Comment.belongsTo(db.Post, {
+  foreignKey: 'postId'
+});
 
 // Create tables
 const initDb = async () => {

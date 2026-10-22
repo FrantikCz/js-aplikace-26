@@ -177,6 +177,7 @@
 					<div class="post-card">
 						<div class="post-title"><%= post.title %></div>
 						<div class="post-author">Autor: <%= post.author %></div>
+						<div class="post-author"><a href="/posts/<%= post.id %>#comments">Komentáře: <%= post.Comments.length %></a></div>
 						<div class="post-date">
 							<%= new Date(post.createdAt).toLocaleDateString('cs-CZ', { 
 								year: 'numeric', 
@@ -188,7 +189,7 @@
 						</div>
 						<div class="post-content"><%= post.content %></div>
 						<div class="post-actions">
-							<a href="/posts/<%= post.id %>" class="btn" style="background: #10b981; padding: 8px 12px; font-size: 14px;">Čtení</a>
+							<a href="/posts/<%= post.id %>#comments" class="btn" style="background: #10b981; padding: 8px 12px; font-size: 14px;">Čtení / komentáře</a>
 							<a href="/posts/<%= post.id %>/edit" class="btn" style="background: #f59e0b; padding: 8px 12px; font-size: 14px;">Editace</a>
 							<form action="/posts/<%= post.id %>/delete" method="POST" style="display: inline;">
 								<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chceš smazat?');">Smazat</button>
