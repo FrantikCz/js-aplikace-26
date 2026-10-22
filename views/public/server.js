@@ -1,13 +1,10 @@
 
-const express = require('express');
 const path = require('path');
-const app = express();
-const PORT = 8000;
+require('dotenv').config({ path: path.join(__dirname, '..', '..', '.env') });
 
-// Nastavení statické složky pro váš web
-app.use(express.static(path.join(__dirname, 'public')));
+const app = require('./app');
 
-// Spuštění serveru
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server běží na adrese: http://localhost:${PORT}`);
 });

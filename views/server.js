@@ -1,11 +1,11 @@
-require('dotenv').config();
-
 const express = require('express');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') });
+
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -18,7 +18,15 @@ app.get('/about', (req, res) => {
     res.render('about', { title: 'O nás / About' });
 });
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-    console.log(`Server úspěšně běží přes Nodemon na adrese: http://localhost:${PORT}`);
+app.use((req, res) => {
+    res.status(404).send('Stránka nebyla nalezena.');
 });
+
+if (require.main === module) {
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+        console.log(`Server úspěšně běží přes Nodemon na adrese: http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
