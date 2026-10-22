@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= post.title %></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background: linear-gradient(135deg, #0f172a, #1e1b4b);
+			color: #ffffff;
+			min-height: 100vh;
+			padding: 20px;
+		}
+
+		.navbar {
+			background: rgba(0, 0, 0, 0.3);
+			padding: 15px 30px;
+			margin: 0 -20px 30px -20px;
+			border-bottom: 2px solid #3b82f6;
+		}
+
+		.navbar a {
+			color: #3b82f6;
+			text-decoration: none;
+			margin-right: 30px;
+			font-weight: 500;
+			transition: color 0.3s;
+		}
+
+		.navbar a:hover {
+			color: #60a5fa;
+		}
+
+		.container {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			font-size: 32px;
+			margin-bottom: 10px;
+			color: #60a5fa;
+		}
+
+		.post-meta {
+			display: flex;
+			gap: 20px;
+			margin-bottom: 30px;
+			font-size: 14px;
+			color: #94a3b8;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			padding-bottom: 20px;
+		}
+
+		.post-content {
+			background: rgba(255, 255, 255, 0.05);
+			padding: 30px;
+			border-radius: 12px;
+			line-height: 1.8;
+			margin-bottom: 30px;
+			border-left: 4px solid #3b82f6;
+		}
+
+		.btn-group {
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+			margin-bottom: 30px;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 12px 24px;
+			background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+			color: white;
+			text-decoration: none;
+			border-radius: 8px;
+			transition: transform 0.3s, box-shadow 0.3s;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+		}
+
+		.btn-secondary {
+			background: #64748b;
+		}
+
+		.btn-secondary:hover {
+			box-shadow: 0 5px 15px rgba(100, 116, 139, 0.4);
+		}
+
+		.btn-delete {
+			background: #ef4444;
+		}
+
+		.btn-delete:hover {
+			box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+		}
+
+		form {
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<a href="/">Domů</a>
+		<a href="/about">O nás</a>
+		<a href="/posts">Příspěvky</a>
+	</nav>
+
+	<div class="container">
+		<h1><%= post.title %></h1>
+
+		<div class="post-meta">
+			<span>👤 <%= post.author %></span>
+			<span>📅 <%= new Date(post.createdAt).toLocaleDateString('cs-CZ', { 
+				year: 'numeric', 
+				month: 'long', 
+				day: 'numeric',
+				hour: '2-digit',
+				minute: '2-digit'
+			}) %></span>
+		</div>
+
+		<div class="post-content">
+			<%-post.content %>
+		</div>
+
+		<div class="btn-group">
+			<a href="/posts/<%= post.id %>/edit" class="btn">✏️ Editovat</a>
+			<form action="/posts/<%= post.id %>/delete" method="POST">
+				<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chceš smazat?');">🗑️ Smazat</button>
+			</form>
+			<a href="/posts" class="btn btn-secondary">← Zpět</a>
+		</div>
+	</div>
+</body>
+</html>

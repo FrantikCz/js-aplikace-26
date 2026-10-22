@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= isEdit ? 'Editovat příspěvek' : 'Nový příspěvek' %></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background: linear-gradient(135deg, #0f172a, #1e1b4b);
+			color: #ffffff;
+			min-height: 100vh;
+			padding: 20px;
+		}
+
+		.navbar {
+			background: rgba(0, 0, 0, 0.3);
+			padding: 15px 30px;
+			margin: 0 -20px 30px -20px;
+			border-bottom: 2px solid #3b82f6;
+		}
+
+		.navbar a {
+			color: #3b82f6;
+			text-decoration: none;
+			margin-right: 30px;
+			font-weight: 500;
+			transition: color 0.3s;
+		}
+
+		.navbar a:hover {
+			color: #60a5fa;
+		}
+
+		.container {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			font-size: 28px;
+			margin-bottom: 30px;
+			color: #60a5fa;
+		}
+
+		.form-group {
+			margin-bottom: 25px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: 500;
+			color: #e2e8f0;
+		}
+
+		input[type="text"],
+		textarea {
+			width: 100%;
+			padding: 12px;
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 8px;
+			color: #ffffff;
+			font-size: 16px;
+			font-family: inherit;
+			transition: all 0.3s;
+		}
+
+		input[type="text"]:focus,
+		textarea:focus {
+			outline: none;
+			background: rgba(255, 255, 255, 0.08);
+			border-color: #3b82f6;
+			box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+		}
+
+		textarea {
+			resize: vertical;
+			min-height: 300px;
+		}
+
+		.btn-group {
+			display: flex;
+			gap: 15px;
+			flex-wrap: wrap;
+			margin-top: 30px;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 12px 24px;
+			background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+			color: white;
+			text-decoration: none;
+			border-radius: 8px;
+			transition: transform 0.3s, box-shadow 0.3s;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+		}
+
+		.btn-secondary {
+			background: #64748b;
+		}
+
+		.btn-secondary:hover {
+			box-shadow: 0 5px 15px rgba(100, 116, 139, 0.4);
+		}
+
+		.error {
+			background: rgba(239, 68, 68, 0.1);
+			border: 1px solid #ef4444;
+			color: #fca5a5;
+			padding: 15px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<a href="/">Domů</a>
+		<a href="/about">O nás</a>
+		<a href="/posts">Příspěvky</a>
+	</nav>
+
+	<div class="container">
+		<h1><%= isEdit ? '✏️ Editovat příspěvek' : '✍️ Nový příspěvek' %></h1>
+
+		<% if (typeof error !== 'undefined' && error) { %>
+			<div class="error"><%= error %></div>
+		<% } %>
+
+		<form method="POST" action="<%= isEdit ? `/posts/${post.id}` : '/posts' %>">
+			<div class="form-group">
+				<label for="title">Název příspěvku *</label>
+				<input 
+					type="text" 
+					id="title" 
+					name="title" 
+					value="<%= post ? post.title : '' %>"
+					required 
+					minlength="3" 
+					maxlength="255"
+				>
+			</div>
+
+			<div class="form-group">
+				<label for="author">Autor</label>
+				<input 
+					type="text" 
+					id="author" 
+					name="author" 
+					value="<%= post && post.author ? post.author : '' %>"
+					maxlength="100"
+				>
+			</div>
+
+			<div class="form-group">
+				<label for="content">Obsah *</label>
+				<textarea 
+					id="content" 
+					name="content" 
+					required
+				><%= post ? post.content : '' %></textarea>
+			</div>
+
+			<div class="btn-group">
+				<button type="submit" class="btn">
+					<%= isEdit ? '💾 Uložit změny' : '➕ Vytvorit příspěvek' %>
+				</button>
+				<a href="/posts" class="btn btn-secondary">← Zpět</a>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

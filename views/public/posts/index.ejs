@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Příspěvky</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background: linear-gradient(135deg, #0f172a, #1e1b4b);
+			color: #ffffff;
+			min-height: 100vh;
+			padding: 20px;
+		}
+
+		.navbar {
+			background: rgba(0, 0, 0, 0.3);
+			padding: 15px 30px;
+			margin: 0 -20px 30px -20px;
+			border-bottom: 2px solid #3b82f6;
+		}
+
+		.navbar a {
+			color: #3b82f6;
+			text-decoration: none;
+			margin-right: 30px;
+			font-weight: 500;
+			transition: color 0.3s;
+		}
+
+		.navbar a:hover {
+			color: #60a5fa;
+		}
+
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			margin-bottom: 30px;
+			font-size: 28px;
+		}
+
+		.btn-group {
+			margin-bottom: 30px;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 12px 24px;
+			background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+			color: white;
+			text-decoration: none;
+			border-radius: 8px;
+			transition: transform 0.3s, box-shadow 0.3s;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+		}
+
+		.btn-delete {
+			background: #ef4444;
+			padding: 8px 16px;
+			font-size: 14px;
+		}
+
+		.btn-delete:hover {
+			box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+		}
+
+		.posts-list {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: 20px;
+		}
+
+		.post-card {
+			background: rgba(255, 255, 255, 0.05);
+			border: 1px solid rgba(255, 255, 255, 0.1);
+			border-radius: 12px;
+			padding: 20px;
+			backdrop-filter: blur(10px);
+			transition: all 0.3s;
+		}
+
+		.post-card:hover {
+			background: rgba(255, 255, 255, 0.08);
+			border-color: rgba(255, 255, 255, 0.2);
+			transform: translateY(-5px);
+		}
+
+		.post-title {
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 10px;
+			color: #60a5fa;
+		}
+
+		.post-author {
+			font-size: 12px;
+			color: #94a3b8;
+			margin-bottom: 10px;
+		}
+
+		.post-date {
+			font-size: 12px;
+			color: #64748b;
+			margin-bottom: 15px;
+		}
+
+		.post-content {
+			color: #e2e8f0;
+			line-height: 1.6;
+			margin-bottom: 15px;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+
+		.post-actions {
+			display: flex;
+			gap: 10px;
+			flex-wrap: wrap;
+		}
+
+		.post-actions a, .post-actions button {
+			font-size: 14px;
+			padding: 8px 12px;
+		}
+
+		.empty-message {
+			text-align: center;
+			padding: 40px;
+			color: #94a3b8;
+		}
+
+		form {
+			display: inline;
+			margin: 0;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<a href="/">Domů</a>
+		<a href="/about">O nás</a>
+		<a href="/posts">Příspěvky</a>
+	</nav>
+
+	<div class="container">
+		<h1>Moje Prispeky</h1>
+
+		<div class="btn-group">
+			<a href="/posts/create" class="btn">+ Nový příspěvek</a>
+		</div>
+
+		<% if (posts.length === 0) { %>
+			<div class="empty-message">
+				<p>Zatím žádné příspěvky. <a href="/posts/create" style="color: #3b82f6;">Vytvoř první!</a></p>
+			</div>
+		<% } else { %>
+			<div class="posts-list">
+				<% posts.forEach(post => { %>
+					<div class="post-card">
+						<div class="post-title"><%= post.title %></div>
+						<div class="post-author">Autor: <%= post.author %></div>
+						<div class="post-date">
+							<%= new Date(post.createdAt).toLocaleDateString('cs-CZ', { 
+								year: 'numeric', 
+								month: 'long', 
+								day: 'numeric',
+								hour: '2-digit',
+								minute: '2-digit'
+							}) %>
+						</div>
+						<div class="post-content"><%= post.content %></div>
+						<div class="post-actions">
+							<a href="/posts/<%= post.id %>" class="btn" style="background: #10b981; padding: 8px 12px; font-size: 14px;">Čtení</a>
+							<a href="/posts/<%= post.id %>/edit" class="btn" style="background: #f59e0b; padding: 8px 12px; font-size: 14px;">Editace</a>
+							<form action="/posts/<%= post.id %>/delete" method="POST" style="display: inline;">
+								<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chceš smazat?');">Smazat</button>
+							</form>
+						</div>
+					</div>
+				<% }); %>
+			</div>
+		<% } %>
+	</div>
+</body>
+</html>
