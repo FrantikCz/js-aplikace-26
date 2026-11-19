@@ -19,6 +19,15 @@ module.exports = (sequelize, Sequelize) => {
       type: DataTypes.STRING(100),
       defaultValue: 'Anonymni'
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'users',
+        key: 'id'
+      },
+      onDelete: 'CASCADE'
+    },
     postId: {
       type: DataTypes.INTEGER,
       allowNull: false,

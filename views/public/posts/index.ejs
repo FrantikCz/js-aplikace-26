@@ -154,17 +154,17 @@
 	</style>
 </head>
 <body>
-	<nav class="navbar">
-		<a href="/">Domů</a>
-		<a href="/about">O nás</a>
-		<a href="/posts">Příspěvky</a>
-	</nav>
+	<%- include('../partials/navigation') %>
 
 	<div class="container">
 		<h1>Moje Prispeky</h1>
 
 		<div class="btn-group">
-			<a href="/posts/create" class="btn">+ Nový příspěvek</a>
+			<% if (currentUser) { %>
+				<a href="/posts/create" class="btn">+ Nový příspěvek</a>
+			<% } else { %>
+				<a href="/auth/login" class="btn">Přihlaste se pro přidání příspěvku</a>
+			<% } %>
 		</div>
 
 		<% if (posts.length === 0) { %>
@@ -190,10 +190,12 @@
 						<div class="post-content"><%= post.content %></div>
 						<div class="post-actions">
 							<a href="/posts/<%= post.id %>#comments" class="btn" style="background: #10b981; padding: 8px 12px; font-size: 14px;">Čtení / komentáře</a>
-							<a href="/posts/<%= post.id %>/edit" class="btn" style="background: #f59e0b; padding: 8px 12px; font-size: 14px;">Editace</a>
-							<form action="/posts/<%= post.id %>/delete" method="POST" style="display: inline;">
-								<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chceš smazat?');">Smazat</button>
-							</form>
+							<% if (currentUser && post.userId === currentUser.id) { %>
+								<a href="/posts/<%= post.id %>/edit" class="btn" style="background: #f59e0b; padding: 8px 12px; font-size: 14px;">Editace</a>
+								<form action="/posts/<%= post.id %>/delete" method="POST" style="display: inline;">
+									<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chceš smazat?');">Smazat</button>
+								</form>
+							<% } %>
 						</div>
 					</div>
 				<% }); %>

@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\routes\\commentRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\routes\\commentRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\index.ejs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\public\\posts\\index.ejs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\controllers\\CommentController.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -21,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\routes\\postRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\routes\\postRoutes.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\index.ejs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\public\\posts\\index.ejs||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\show.ejs||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -53,9 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\test\\server.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:views\\test\\server.test.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\.copilot\\plans\\plan-make-the-nodeexpress-project-runnable.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownSecurePreview"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\index.ejs||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -89,50 +82,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "commentRoutes.js",
-              "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\routes\\commentRoutes.js",
-              "RelativeDocumentMoniker": "views\\routes\\commentRoutes.js",
-              "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\routes\\commentRoutes.js",
-              "RelativeToolTip": "views\\routes\\commentRoutes.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:58:20.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CommentController.js",
-              "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\controllers\\CommentController.js",
-              "RelativeDocumentMoniker": "views\\controllers\\CommentController.js",
-              "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\controllers\\CommentController.js",
-              "RelativeToolTip": "views\\controllers\\CommentController.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:58:14.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Comment.js",
-              "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\models\\Comment.js",
-              "RelativeDocumentMoniker": "views\\models\\Comment.js",
-              "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\models\\Comment.js",
-              "RelativeToolTip": "views\\models\\Comment.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:57:57.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "form.ejs",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\form.ejs",
               "RelativeDocumentMoniker": "views\\public\\posts\\form.ejs",
@@ -140,12 +94,11 @@
               "RelativeToolTip": "views\\public\\posts\\form.ejs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-22T08:42:11.284Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:42:11.284Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "show.ejs",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\show.ejs",
               "RelativeDocumentMoniker": "views\\public\\posts\\show.ejs",
@@ -153,18 +106,17 @@
               "RelativeToolTip": "views\\public\\posts\\show.ejs",
               "ViewState": "AgIAAGwAAAAAAAAAAAAQwNUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-22T08:41:57.542Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:41:57.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "index.ejs",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\index.ejs",
               "RelativeDocumentMoniker": "views\\public\\posts\\index.ejs",
               "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\posts\\index.ejs",
               "RelativeToolTip": "views\\public\\posts\\index.ejs",
-              "ViewState": "AgIAAJ8AAAAAAAAAAAApwMwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2026-10-22T08:41:46.182Z",
               "EditorCaption": ""
@@ -179,8 +131,7 @@
               "RelativeToolTip": "views\\routes\\postRoutes.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:41:28.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:41:28.162Z"
             },
             {
               "$type": "Document",
@@ -192,8 +143,7 @@
               "RelativeToolTip": "views\\controllers\\PostController.js",
               "ViewState": "AgIAACUAAAAAAAAAAAAewIMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:41:21.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:41:21.311Z"
             },
             {
               "$type": "Document",
@@ -205,12 +155,11 @@
               "RelativeToolTip": "views\\models\\Post.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:41:09.277Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:41:09.277Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "sequelize.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\db\\sequelize.js",
               "RelativeDocumentMoniker": "views\\db\\sequelize.js",
@@ -218,12 +167,11 @@
               "RelativeToolTip": "views\\db\\sequelize.js",
               "ViewState": "AgIAABcAAAAAAAAAAIBJwCcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:41:02.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:41:02.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "config.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\db\\config.js",
               "RelativeDocumentMoniker": "views\\db\\config.js",
@@ -231,12 +179,35 @@
               "RelativeToolTip": "views\\db\\config.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:40:59.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:40:59.392Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
+              "Title": "Comment.js",
+              "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\models\\Comment.js",
+              "RelativeDocumentMoniker": "views\\models\\Comment.js",
+              "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\models\\Comment.js",
+              "RelativeToolTip": "views\\models\\Comment.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-10-22T08:57:57.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommentController.js",
+              "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\controllers\\CommentController.js",
+              "RelativeDocumentMoniker": "views\\controllers\\CommentController.js",
+              "ToolTip": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\controllers\\CommentController.js",
+              "RelativeToolTip": "views\\controllers\\CommentController.js",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-10-22T08:58:14.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "defaultRoutes.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\app\\defaultRoutes.js",
               "RelativeDocumentMoniker": "views\\public\\app\\defaultRoutes.js",
@@ -244,12 +215,11 @@
               "RelativeToolTip": "views\\public\\app\\defaultRoutes.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:10:03.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:10:03.213Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "server.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\server.js",
               "RelativeDocumentMoniker": "views\\public\\server.js",
@@ -257,12 +227,11 @@
               "RelativeToolTip": "views\\public\\server.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:10:03.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:10:03.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\app\\index.js",
               "RelativeDocumentMoniker": "views\\public\\app\\index.js",
@@ -270,12 +239,11 @@
               "RelativeToolTip": "views\\public\\app\\index.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:10:03.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:10:03.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "server.test.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\test\\server.test.js",
               "RelativeDocumentMoniker": "views\\test\\server.test.js",
@@ -283,24 +251,11 @@
               "RelativeToolTip": "views\\test\\server.test.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:15:58.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:15:58.971Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "plan-make-the-nodeexpress-project-runnable.md [Preview]",
-              "DocumentMoniker": "C:\\Users\\nemecekf24\\.copilot\\plans\\plan-make-the-nodeexpress-project-runnable.md",
-              "RelativeDocumentMoniker": "..\\..\\.copilot\\plans\\plan-make-the-nodeexpress-project-runnable.md",
-              "ToolTip": "C:\\Users\\nemecekf24\\.copilot\\plans\\plan-make-the-nodeexpress-project-runnable.md [Preview]",
-              "RelativeToolTip": "..\\..\\.copilot\\plans\\plan-make-the-nodeexpress-project-runnable.md [Preview]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2026-10-22T08:16:22.686Z",
-              "EditorCaption": " [Preview]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "server.js",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\server.js",
               "RelativeDocumentMoniker": "views\\server.js",
@@ -308,12 +263,11 @@
               "RelativeToolTip": "views\\server.js",
               "ViewState": "AgIAAAUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-10-22T08:10:02.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:10:02.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\package.json",
               "RelativeDocumentMoniker": "views\\package.json",
@@ -321,12 +275,11 @@
               "RelativeToolTip": "views\\package.json",
               "ViewState": "AgIAABMAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-22T08:08:43.64Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:08:43.64Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "package.json",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\package.json",
               "RelativeDocumentMoniker": "package.json",
@@ -334,12 +287,11 @@
               "RelativeToolTip": "package.json",
               "ViewState": "AgIAAA8AAAAAAAAAAABBwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-22T08:08:43.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:08:43.32Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "index.ejs",
               "DocumentMoniker": "C:\\Users\\nemecekf24\\Desktop\\jsweb26\\views\\public\\index.ejs",
               "RelativeDocumentMoniker": "views\\public\\index.ejs",
@@ -347,8 +299,7 @@
               "RelativeToolTip": "views\\public\\index.ejs",
               "ViewState": "AgIAAGgAAAAAAAAAAAApwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-10-22T08:03:36.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-22T08:03:36.653Z"
             }
           ]
         }

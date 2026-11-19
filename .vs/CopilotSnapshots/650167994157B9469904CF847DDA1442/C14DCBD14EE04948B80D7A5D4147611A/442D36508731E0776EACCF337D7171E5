@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Můj účet</title>
+	<style>
+		body { font-family: Arial, sans-serif; background: #0f172a; color: #fff; padding: 24px; }
+		.navbar, .card { max-width: 700px; margin: 0 auto 24px; }
+		.navbar a { color: #60a5fa; margin-right: 16px; }
+		.card { background: #1e293b; padding: 28px; border-radius: 12px; }
+		label { display: block; margin-top: 16px; }
+		input { width: 100%; box-sizing: border-box; padding: 12px; margin-top: 6px; border-radius: 6px; border: 1px solid #475569; }
+		button { margin-top: 18px; padding: 12px 20px; border: 0; border-radius: 6px; background: #ef4444; color: #fff; cursor: pointer; }
+		.error { color: #fca5a5; }
+		.warning { color: #fca5a5; }
+	</style>
+</head>
+<body>
+	<%- include('partials/navigation') %>
+	<main class="card">
+		<h1>Můj účet</h1>
+		<p>Uživatelské jméno: <strong><%= user.username %></strong></p>
+		<p>E-mail: <strong><%= user.email %></strong></p>
+
+		<h2>Smazat účet</h2>
+		<p class="warning">Smazáním účtu se trvale odstraní také všechny vaše příspěvky a komentáře.</p>
+		<% if (error) { %><p class="error"><%= error %></p><% } %>
+		<form action="/account/delete" method="POST">
+			<label for="password">Pro potvrzení zadejte své heslo</label>
+			<input id="password" name="password" type="password" required autocomplete="current-password">
+			<button type="submit" onclick="return confirm('Opravdu chcete trvale smazat účet a jeho příspěvky i komentáře?');">Trvale smazat účet</button>
+		</form>
+	</main>
+</body>
+</html>

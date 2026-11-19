@@ -1,0 +1,14 @@
+<nav class="navbar">
+	<a href="/">Domů</a>
+	<a href="/about">O nás</a>
+	<a href="/posts">Příspěvky</a>
+	<% if (currentUser) { %>
+		<a href="/account">Účet: <%= currentUser.username %></a>
+		<form action="/auth/logout" method="POST" style="display: inline;">
+			<button type="submit" style="background: none; border: 0; color: #3b82f6; cursor: pointer; font: inherit;">Odhlásit</button>
+		</form>
+	<% } else { %>
+		<a href="/auth/register">Registrace</a>
+		<a href="/auth/login">Přihlášení</a>
+	<% } %>
+</nav>

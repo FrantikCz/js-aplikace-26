@@ -115,11 +115,7 @@
 	</style>
 </head>
 <body>
-	<nav class="navbar">
-		<a href="/">Domů</a>
-		<a href="/about">O nás</a>
-		<a href="/posts">Příspěvky</a>
-	</nav>
+		<%- include('../partials/navigation') %>
 
 	<div class="container">
 		<h1><%= post.title %></h1>
@@ -136,14 +132,16 @@
 		</div>
 
 		<div class="post-content">
-			<%-post.content %>
+			<%= post.content %>
 		</div>
 
 		<div class="btn-group">
-			<a href="/posts/<%= post.id %>/edit" class="btn">Editovat</a>
-			<form action="/posts/<%= post.id %>/delete" method="POST">
-				<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chces smazat?');">Smazat</button>
-			</form>
+			<% if (currentUser && post.userId === currentUser.id) { %>
+				<a href="/posts/<%= post.id %>/edit" class="btn">Editovat</a>
+				<form action="/posts/<%= post.id %>/delete" method="POST">
+					<button type="submit" class="btn btn-delete" onclick="return confirm('Opravdu chces smazat?');">Smazat</button>
+				</form>
+			<% } %>
 			<a href="/posts" class="btn btn-secondary">Zpet</a>
 		</div>
 
@@ -169,9 +167,11 @@
 										}) %>
 									</div>
 								</div>
-								<form action="/posts/<%= post.id %>/comments/<%= comment.id %>/delete" method="POST" style="display: inline;">
-									<button type="submit" class="btn btn-delete" style="padding: 6px 12px; font-size: 12px;" onclick="return confirm('Smazat komentar?');">Smazat</button>
-								</form>
+								<% if (currentUser && comment.userId === currentUser.id) { %>
+									<form action="/posts/<%= post.id %>/comments/<%= comment.id %>/delete" method="POST" style="display: inline;">
+										<button type="submit" class="btn btn-delete" style="padding: 6px 12px; font-size: 12px;" onclick="return confirm('Smazat komentar?');">Smazat</button>
+									</form>
+								<% } %>
 							</div>
 							<div style="color: #e2e8f0; line-height: 1.5;"><%= comment.content %></div>
 						</div>
@@ -185,16 +185,9 @@
 
 			<!-- COMMENT FORM -->
 			<div id="comment-form" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; margin-top: 25px;">
-				<h3 style="font-size: 16px; margin-bottom: 15px; color: #60a5fa;">Pridat komentar</h3>
+				<% if (currentUser) { %>
+				<h3 style="font-size: 16px; margin-bottom: 15px; color: #60a5fa;">Přidat komentář</h3>
 				<form action="/posts/<%= post.id %>/comments" method="POST">
-					<div style="margin-bottom: 15px;">
-						<input 
-							type="text" 
-							name="author" 
-							placeholder="Tvoje jmeno (volne)"
-							style="width: 100%; padding: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: #ffffff; font-family: inherit;"
-						>
-					</div>
 					<div style="margin-bottom: 15px;">
 						<textarea 
 							name="content" 
@@ -206,6 +199,9 @@
 					</div>
 					<button type="submit" class="btn" style="width: 100%;">Poslat komentar</button>
 				</form>
+				<% } else { %>
+					<a href="/auth/login">Pro přidání komentáře se přihlaste.</a>
+				<% } %>
 			</div>
 		</div>
 	</div>

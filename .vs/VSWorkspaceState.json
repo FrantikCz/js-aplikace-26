@@ -5,6 +5,6 @@
     "\\views\\public",
     "\\views\\public\\app"
   ],
-  "SelectedNode": "\\views\\server.js",
+  "SelectedNode": "\\views\\public\\server.js",
   "PreviewInSolutionExplorer": false
 }

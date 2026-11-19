@@ -23,11 +23,11 @@ class PostController {
   // Uloží nový příspěvek
   static async store(req, res) {
     try {
-      const { title, content, author } = req.body;
+      const { title, content } = req.body;
 
       if (!title || !content) {
         return res.status(400).render('posts/form', {
-          post: { title, content, author },
+          post: { title, content },
           isEdit: false,
           error: 'Název a obsah jsou povinné!'
         });
@@ -36,7 +36,8 @@ class PostController {
       await db.Post.create({
         title,
         content,
-        author: author || 'Neznámý autor'
+        author: req.currentUser.username,
+        userId: req.currentUser.id
       });
 
       res.redirect('/posts');
@@ -73,6 +74,9 @@ class PostController {
       if (!post) {
         return res.status(404).send('Příspěvek nenalezen');
       }
+      if (post.userId !== req.currentUser.id) {
+        return res.status(403).send('Tento příspěvek nemůžete upravit.');
+      }
       res.render('posts/form', { post, isEdit: true });
     } catch (error) {
       console.error(error);
@@ -87,12 +91,15 @@ class PostController {
       if (!post) {
         return res.status(404).send('Příspěvek nenalezen');
       }
+      if (post.userId !== req.currentUser.id) {
+        return res.status(403).send('Tento příspěvek nemůžete upravit.');
+      }
 
-      const { title, content, author } = req.body;
+      const { title, content } = req.body;
 
       if (!title || !content) {
         return res.status(400).render('posts/form', {
-          post: { id: post.id, title, content, author },
+          post: { id: post.id, title, content, author: post.author },
           isEdit: true,
           error: 'Název a obsah jsou povinné!'
         });
@@ -101,7 +108,7 @@ class PostController {
       await post.update({
         title,
         content,
-        author: author || 'Neznámý autor'
+        author: req.currentUser.username
       });
 
       res.redirect(`/posts/${post.id}`);
@@ -117,6 +124,9 @@ class PostController {
       const post = await db.Post.findByPk(req.params.id);
       if (!post) {
         return res.status(404).send('Příspěvek nenalezen');
+      }
+      if (post.userId !== req.currentUser.id) {
+        return res.status(403).send('Tento příspěvek nemůžete smazat.');
       }
 
       await post.destroy();

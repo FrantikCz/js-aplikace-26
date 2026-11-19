@@ -5,7 +5,7 @@ class CommentController {
   static async store(req, res) {
     try {
       const { postId } = req.params;
-      const { content, author } = req.body;
+      const { content } = req.body;
 
       // Overeni existence postu
       const post = await db.Post.findByPk(postId);
@@ -20,8 +20,9 @@ class CommentController {
 
       await db.Comment.create({
         content: content.trim(),
-        author: author ? author.trim() : 'Anonymni',
-        postId: parseInt(postId)
+        author: req.currentUser.username,
+        postId: Number(postId),
+        userId: req.currentUser.id
       });
 
       res.redirect(`/posts/${postId}`);
@@ -42,7 +43,7 @@ class CommentController {
       }
 
       // Overeni, ze komentar patri k danemu postu
-      if (comment.postId !== parseInt(postId)) {
+      if (comment.postId !== Number(postId) || comment.userId !== req.currentUser.id) {
         return res.status(403).send('Neopravneny pristup');
       }
 

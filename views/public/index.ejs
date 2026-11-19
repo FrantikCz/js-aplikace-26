@@ -119,6 +119,15 @@
         </div>
 
         <div class="links">
+            <% if (currentUser) { %>
+                <a href="/account" class="link-btn">Můj účet (<%= currentUser.username %>)</a>
+                <form action="/auth/logout" method="POST">
+                    <button type="submit" class="link-btn">Odhlásit se</button>
+                </form>
+            <% } else { %>
+                <a href="/auth/register" class="link-btn">Registrace</a>
+                <a href="/auth/login" class="link-btn">Přihlášení</a>
+            <% } %>
             <a href="https://github.com" target="_blank" class="link-btn">Můj GitHub</a>
             <a href="https://instagram.com" target="_blank" class="link-btn">Instagram</a>
             <a href="https://linkedin.com" target="_blank" class="link-btn">LinkedIn</a>

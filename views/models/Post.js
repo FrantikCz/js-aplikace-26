@@ -26,6 +26,15 @@ module.exports = (sequelize, Sequelize) => {
       type: DataTypes.STRING(100),
       defaultValue: 'Neznámý autor'
     },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'users',
+        key: 'id'
+      },
+      onDelete: 'CASCADE'
+    },
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: Sequelize.NOW
